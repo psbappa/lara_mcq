@@ -12,28 +12,12 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <div class="mx-auto">
-                    <a href="#" class="navbar-brand">MCQ Question</a>
-                </div>
-            </div>
-        </nav>
-    </div> -->
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <div class="navbar-header">Test
+            <div class="navbar-header">
             </div>
-            
         </div>
     </nav>
-
-
     <div class="container">
         @yield('content')
     </div>
