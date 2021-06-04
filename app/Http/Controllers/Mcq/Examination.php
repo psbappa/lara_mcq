@@ -25,8 +25,6 @@ class Examination extends Controller
         $answersArray = array() ;
         
         foreach($get_questions as $i => $question) {
-            $get_options = $Exam->get_options($question->id);
-
             return view('Mcq.examination',compact('get_questions'));
         }
         

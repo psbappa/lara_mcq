@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Exam extends Model
 {
-    protected $table="questions";
+    protected $table="e_questions";
     
     use HasFactory;
 
@@ -21,29 +21,19 @@ class Exam extends Model
     ];
 
     public function get_questions(){
-        return DB::table('questions')
-                        // ->join('options', 'questions.id', '=', 'options.q_id')
-                        ->join('answers', 'questions.id', '=', 'answers.q_id')
+        return DB::table('e_questions')
+                        ->join('e_answers', 'e_questions.id', '=', 'e_answers.q_id')
                         ->get()->toArray();
     }
 
     public function get_ans(){
-        return DB::table('questions')
-                        // ->join('options', 'questions.id', '=', 'options.q_id')
-                        ->join('answers', 'questions.id', '=', 'answers.q_id')
+        return DB::table('e_questions')
+                        ->join('e_answers', 'e_questions.id', '=', 'e_answers.q_id')
                         ->get('option_number')->toArray();
     }
 
-    public function get_options($q_id){
-        return DB::table('options')
-                        // ->join('questions', 'options.q_id', '=', 'questions.id')
-                        // ->join('answers', 'options.q_id', '=', 'answers.q_id')
-                        ->where('q_id',$q_id)
-                        ->get()->toArray();
-    }
-
     public function get_answer($q_id){
-        return DB::table('answers')
+        return DB::table('e_answers')
                         ->where('q_id',$q_id)
                         ->get()->toArray();
     }
