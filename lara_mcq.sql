@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2021 at 05:56 AM
+-- Generation Time: Jun 04, 2021 at 09:11 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -40,10 +40,12 @@ CREATE TABLE `e_answers` (
 --
 
 INSERT INTO `e_answers` (`id`, `q_id`, `option_number`, `created_at`, `updated_at`) VALUES
-(1, '1', '2', '2021-06-23 03:51:46', '2021-06-15 03:51:46'),
-(2, '2', '1', NULL, NULL),
-(3, '3', '3', '2021-06-29 03:52:13', '2021-06-19 03:52:13'),
-(4, '4', '4', NULL, NULL);
+(1, '1', '2', '2021-06-09 06:02:02', '2021-06-16 06:02:02'),
+(2, '2', '1', '2021-06-22 06:02:02', '2021-06-26 06:02:02'),
+(3, '3', '3', NULL, NULL),
+(4, '4', '4', NULL, NULL),
+(6, '7', '1', NULL, NULL),
+(7, '8', '3', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -55,7 +57,7 @@ CREATE TABLE `e_questions` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_enabled` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `options` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -65,10 +67,12 @@ CREATE TABLE `e_questions` (
 --
 
 INSERT INTO `e_questions` (`id`, `question`, `is_enabled`, `options`, `created_at`, `updated_at`) VALUES
-(1, 'tallest mountain?', '1', 'Kanchanjun,Mount Ever,K2,Himgiri', '2021-06-16 03:46:06', '2021-06-29 03:46:06'),
-(2, 'Greatest among them?', '1', '50,20,5,35', '2021-06-18 03:46:47', '2021-06-21 03:46:47'),
-(3, 'smallest city in world?', '1', 'Paris,Zest,Vatican City,Romania', '2021-06-23 03:46:47', '2021-06-15 03:46:47'),
-(4, 'Which function is used to return the last element of an array?', '', 'end(),arr_end(),last(),explode()', '2021-06-17 03:54:53', '2021-06-09 03:54:53');
+(1, 'tallest mountain?', '1', 'Kanchanjun,Mount Ever,K2,Himgiri', '2021-06-24 05:57:20', '2021-06-20 05:57:20'),
+(2, 'Greatest among them?', '1', '50,20,5,35', '2021-06-18 05:57:20', '2021-06-27 05:57:20'),
+(3, 'smallest city in world?', '3', 'Paris,Zest,Vatican City,Romania', '2021-06-23 06:04:29', '2021-06-13 06:04:29'),
+(4, 'Which function is used to return the last element of an array?', '2', 'end(),arr_end(),last(),explode()', NULL, NULL),
+(7, 'Which of the following method sends input to a script via a URL?', '1', 'Get,Post,Both,None', NULL, NULL),
+(8, 'PHP is a ____________ language?', '1', 'user-side scripting,client-side scripting,server-side scripting,Both B and C', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +115,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2021_06_01_125253_create_options_table', 1),
 (7, '2021_06_04_034234_create_e_question_table', 1),
 (8, '2021_06_04_034358_create_e_answers_table', 1),
-(9, '2021_06_04_034949_create_e_answers_table', 2);
+(9, '2021_06_04_034949_create_e_answers_table', 2),
+(10, '2021_06_04_055533_create_e_questions_table', 3),
+(11, '2021_06_04_055559_create_e_answers_table', 3);
 
 -- --------------------------------------------------------
 
@@ -192,13 +198,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `e_answers`
 --
 ALTER TABLE `e_answers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `e_questions`
 --
 ALTER TABLE `e_questions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -210,7 +216,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`

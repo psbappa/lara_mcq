@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 @extends('Mcq.layout')
 
 @section('content')

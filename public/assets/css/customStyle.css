@@ -1,0 +1,90 @@
+.single {
+    padding: 30px 15px;
+    margin-top: 40px;
+    background: #fcfcfc;
+    border: 1px solid #f0f0f0; }
+.single h3.side-title {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase; }
+.single h3.side-title:after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: #ff173c;
+    display: block;
+    margin-top: 6px; }
+.single ul {
+    margin-bottom: 0; }
+.single li a {
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 40px;
+    display: block;
+    text-decoration: none; }
+.single li a:hover {
+    color: #ff173c; }
+.single li:last-child a {
+    border-bottom: 0; }
+
+
+
+
+/* Examination View */
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+
+  .quiz,
+  .choices {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .choices li {
+    margin-bottom: 5px;
+  }
+
+  .choices label {
+    display: flex;
+    align-items: center;
+  }
+
+  .choices label,
+  input[type="radio"] {
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    margin-right: 8px;
+  }
+
+  .view-results {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: inherit;
+    color: white;
+    background: teal;
+    border-radius: 8px;
+    margin-right: 5px;
+  }
+
+  .my-results {
+    padding: 1rem;
+    border: 1px solid goldenrod;
+  }
