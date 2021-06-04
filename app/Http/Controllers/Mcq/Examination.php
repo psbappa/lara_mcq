@@ -58,7 +58,7 @@ class Examination extends Controller
 
         $percentage = ( $correct_answer / $total_question ) * 100;
 
-        return view('Mcq.result',compact('percentage','wrong_answer','total_question'));
+        return view('Mcq.result',compact('percentage','wrong_answer','total_question','correct_answer'));
     }
 
     public function add_question() {

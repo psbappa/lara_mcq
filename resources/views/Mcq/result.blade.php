@@ -12,6 +12,7 @@
                 <ul class="list-unstyled">
                     <li><a href="#" title="">Total Questions <span class="pull-right"><?=$total_question;?></span></a></li>
                     <li><a href="#" title="">Wrong Answer <span class="pull-right"><?=$wrong_answer;?></span></a></li>
+                    <li><a href="#" title="">Marks Obtained <span class="pull-right"><?=$correct_answer;?></span></a></li>
                     <li><a href="#" title="">Grade <span class="pull-right"><?=round($percentage,2) . '%';?></span></a></li>
                 </ul>
             </div>
