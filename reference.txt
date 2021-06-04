@@ -1,0 +1,14 @@
+1. Tthis project created on laravel. 
+2. In this project, we have make a convention to add question and answers with the options to the mysql database.
+3. database name lara_mcq.
+4. Create a database with name lara_mcq  and make a php artisan migrate to create table.
+5. While adding question follow this to add in specified format
+    => filled question in question field.
+    => filled answer in answer filed with 1 to 4 number as there are 4 options to make value are matched with key from database.
+    => while adding options entered simple format with comma separator.
+
+example: if we are adding a question like this.
+
+Question. => Greatest Number among these?
+Options. => 20,30,85,65 
+Answer. => 3
