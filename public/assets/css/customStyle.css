@@ -88,3 +88,7 @@ html {
     padding: 1rem;
     border: 1px solid goldenrod;
   }
+
+#radio_option {
+    margin: 5px 19px 5px 45px;
+}
