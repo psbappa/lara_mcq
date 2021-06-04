@@ -18,6 +18,12 @@
         </ul>
       </div>
     @endif
+
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <label class="form-group">Question:</label>
     <textarea name="question" placeholder="Enter Question.." rows="3" class="form-control"></textarea>
     

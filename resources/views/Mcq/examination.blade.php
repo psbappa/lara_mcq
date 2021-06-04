@@ -22,7 +22,7 @@
     <?php
       }}
     ?>
-    <input type="submit" />
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection
 

@@ -49,7 +49,7 @@ class Examination extends Controller
         $get_exact_ans = $Exam->get_ans();
         $questionsArray = json_decode(json_encode($get_exact_ans), true);
         $database_ans = array_column($questionsArray, 'option_number');
-
+        
         $checking = array_diff_assoc($user_ans,$database_ans);
 
         $total_question = count($total_questions);
