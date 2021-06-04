@@ -37,4 +37,11 @@ class Exam extends Model
                         ->where('q_id',$q_id)
                         ->get()->toArray();
     }
+
+    public function insert_question($question, $options) {
+        echo '<pre>';
+        print_r($question);
+        print_r($options);
+        exit('models....');
+    }
 }

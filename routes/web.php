@@ -20,4 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\mcq\Examination@index');
 Route::get('/create', 'App\Http\Controllers\mcq\Examination@create');
-Route::post('/result', 'App\Http\Controllers\mcq\Examination@result');
+Route::post('/result', 'App\Http\Controllers\mcq\Examination@result');   
+Route::GET('/add-question', 'App\Http\Controllers\mcq\Examination@add_question')->name('add-question');
+Route::POST('/submit_question', 'App\Http\Controllers\mcq\Examination@submit_question');

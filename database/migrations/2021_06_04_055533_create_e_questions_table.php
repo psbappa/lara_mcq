@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEQuestionTable extends Migration
+class CreateEQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ class CreateEQuestionTable extends Migration
             $table->id();
             $table->string('question', 255);
             $table->string('is_enabled', 10);
-            $table->string('options', 50);
+            $table->string('options', 255);
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Exam;
+use Illuminate\Support\Facades\DB;
 
 class Examination extends Controller
 {
@@ -27,7 +28,6 @@ class Examination extends Controller
         foreach($get_questions as $i => $question) {
             return view('Mcq.examination',compact('get_questions'));
         }
-        
         return view('Mcq.examination',compact('get_questions','optionsArray','answersArray'));
     }
 
@@ -58,8 +58,45 @@ class Examination extends Controller
 
         $percentage = ( $correct_answer / $total_question ) * 100;
 
-        return view('Mcq.result',compact('percentage','wrong_answer'));
+        return view('Mcq.result',compact('percentage','wrong_answer','total_question'));
+    }
 
+    public function add_question() {
+        return view('Mcq.create');
+    }
 
+    public function submit_question(Request $request) {
+        $this->validate($request,[
+                                'question'=>'required',
+                                'answer'=>'required',
+                                'options'=>'required',
+                            ]);
+
+        $question = $request->input('question');
+        $answer = $request->input('answer');
+        $options = $request->input('options');
+        
+        $q_data=array(
+                'question'      =>$question,
+                'is_enabled'    =>1,
+                "options"       =>$options
+            );
+        
+        $qr_data = DB::table('e_questions')->insert($q_data);
+        if($qr_data) {
+            $last_insert_id = DB::getPdo()->lastInsertId();
+
+            $a_data=array(
+                'q_id'             =>$last_insert_id,
+                'option_number'     =>$answer
+            );
+    
+            $ar_data = DB::table('e_answers')->insert($a_data);
+            return back()->with('success','Question inserted successfully');
+        } else {
+            return Redirect::back()->withErrors(['msg', 'The Message']);
+        }
+
+        
     }
 }
