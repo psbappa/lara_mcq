@@ -23,3 +23,8 @@ Route::get('/create', 'App\Http\Controllers\mcq\Examination@create');
 Route::post('/result', 'App\Http\Controllers\mcq\Examination@result');   
 Route::GET('/add-question', 'App\Http\Controllers\mcq\Examination@add_question')->name('add-question');
 Route::POST('/submit_question', 'App\Http\Controllers\mcq\Examination@submit_question');
+
+// API Section
+Route::get('/api/all-questions', 'App\Http\Controllers\Api\ExaminationController@getAllQuestions');
+Route::get('/api/question/{id}', 'App\Http\Controllers\Api\ExaminationController@getQuestion');
+Route::POST('/api/add-question', 'App\Http\Controllers\Api\ExaminationController@addQuestion');

@@ -12,3 +12,19 @@ example: if we are adding a question like this.
 Question. => Greatest Number among these?
 Options. => 20,30,85,65 
 Answer. => 3
+
+
+Todays works::
+Create an api function where we can view all questions, view specified question based on question id, and insert new question.
+Here are the api url's::
+1. http://127.0.0.1:8000/api/all-questions      (get method){to view all the questions}
+2. http://127.0.0.1:8000/api/question/{id}      (get method){to view specific question id question present in the datbase.}
+3. http://127.0.0.1:8000/api/add-question       (POST method){add new question with question, options and the correct answer.} 
+body parameters=> 
+example:
+{
+    "question":"Your question",
+    "is_enabled":"1",
+    "options":"[yourn options]",
+    "option_number":"correct options"
+}
