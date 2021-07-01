@@ -25,6 +25,6 @@ example:
 {
     "question":"Your question",
     "is_enabled":"1",
-    "options":"[yourn options]",
+    "options":"your options",
     "option_number":"correct options"
 }
