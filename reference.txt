@@ -1,4 +1,4 @@
-1. Tthis project created on laravel. 
+1. This project created on laravel. 
 2. In this project, we have make a convention to add question and answers with the options to the mysql database.
 3. database name lara_mcq.
 4. Create a database with name lara_mcq  and make a php artisan migrate to create table.
